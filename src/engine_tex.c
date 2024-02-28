@@ -1177,7 +1177,7 @@ static bool rollback_end(fz_context *ctx, struct tex_engine *self, int *tracep, 
 static void rollback_add_change(fz_context *ctx, struct tex_engine *self, fileentry_t *e, int changed)
 {
   int trace_len = self->rollback.trace_len;
-  // if (changed > 0) changed--;
+  if (changed > 0) changed--;
 
   // Assert we are in a transaction
   if (trace_len == NOT_IN_TRANSACTION)
