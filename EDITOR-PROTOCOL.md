@@ -147,6 +147,20 @@ compilation — avoiding restarts from missing files. In `-stream` mode the
 engine starts paused, so `(resume)` is required to begin compilation.
 
 ```scheme
+(rerun t)
+(rerun nil)
+(rerun-once)
+```
+
+Control convergence-on-idle. When enabled with `(rerun t)`, TeXpresso waits
+for a short idle window after each change; if the `.aux` file changed since
+the last pass, the engine is respawned with the prior-pass aux to converge
+TOC/refs. `(rerun nil)` disables it. `(rerun-once)` triggers a single
+immediate pass regardless of the enabled state — useful for committing the
+current aux on demand before switching to reading mode. Defaults to disabled
+at startup.
+
+```scheme
 (synctex-forward "path" line)
 ```
 

@@ -71,6 +71,8 @@ struct persistent_state {
 
   bool line_output, use_tectonic, use_texlive, initialize_only, stream_mode;
   bool paused;
+  bool rerun_enabled;
+  bool rerun_once_pending;
 };
 
 bool texpresso_main(struct persistent_state *ps);

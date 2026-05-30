@@ -35,6 +35,8 @@ enum EDITOR_COMMAND
   EDIT_REGISTER,
   EDIT_PAUSE,
   EDIT_RESUME,
+  EDIT_RERUN,
+  EDIT_RERUN_ONCE,
 };
 
 struct editor_change
@@ -127,6 +129,13 @@ struct editor_command
 
     struct {
     } resume;
+
+    struct {
+      bool status;
+    } rerun;
+
+    struct {
+    } rerun_once;
   };
 };
 

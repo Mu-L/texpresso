@@ -129,6 +129,9 @@ static void usage(void)
 
 int main(int argc, const char **argv)
 {
+  // Unbuffered stderr so debug/[fatal] lines hit disk before a crash.
+  setvbuf(stderr, NULL, _IONBF, 0);
+
   char work_dir[PATH_MAX];
 
   if (!getcwd(work_dir, PATH_MAX))
@@ -351,6 +354,8 @@ int main(int argc, const char **argv)
       .stream_mode = stream_mode,
       // In stream mode, start paused: editor primes the VFS before (resume).
       .paused = stream_mode,
+      .rerun_enabled = false,
+      .rerun_once_pending = false,
   };
 
   int exit_code = 0;

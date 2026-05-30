@@ -305,6 +305,21 @@ bool editor_parse(fz_context *ctx,
       goto arity;
     *out = (struct editor_command){.tag = EDIT_RESUME, .resume = {}};
   }
+  else if (strcmp(verb, "rerun") == 0)
+  {
+    if (len != 2)
+      goto arity;
+    bool status =
+        truth_value(ctx, stack, val_array_get(ctx, stack, command, 1));
+    *out = (struct editor_command){.tag = EDIT_RERUN,
+                                   .rerun = {.status = status}};
+  }
+  else if (strcmp(verb, "rerun-once") == 0)
+  {
+    if (len != 1)
+      goto arity;
+    *out = (struct editor_command){.tag = EDIT_RERUN_ONCE, .rerun_once = {}};
+  }
   else
   {
     fprintf(stderr, "[command] unknown verb: %s\n", verb);
