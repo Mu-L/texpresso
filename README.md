@@ -28,6 +28,8 @@ See the [screencasts](#Screencasts) at the end of this file for a visual demo of
 
 TeXpresso has been tested on Linux and macOS and should work with both AMD64 and Apple Silicon architectures. See [INSTALL.md](./INSTALL.md) for dependency and build instructions.
 
+On macOS, `make macos-app` additionally produces `build/TeXpresso.app`, a bundle whose dock icon renders at the correct HIG size. Launch it with `open build/TeXpresso.app --args /abs/path.tex` or point your editor at `build/TeXpresso.app/Contents/MacOS/texpresso`. The plain `build/texpresso` binary falls back to the default macOS binary icon.
+
 ### Design
 
 The TeXpresso system is built of the following parts:
