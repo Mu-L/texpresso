@@ -51,14 +51,19 @@ The driver sends information between the editor and the renderer in both directi
 Keyboard controls:
 - `←`, `→`: change page
 - `↑`, `↓`: move within the page
-- `p` (for "page"): switch between "fit-to-page" and "fit-to-width" zoom modes
-- `c` ("crop"): crop borders
+- `h`, `j`, `k`, `l`: Pan page. Press shift to move faster
+- `<Space>` / `b`: Next page / previous page (like less).
+- `p` ("page"): fit to page
+- `w` ("width"): fit to width
+- `c` ("crop"): toggle crop borders
 - `q` ("quit"): quit
 - `i` ("invert"): dark mode
 - `I` : toggle theming
 - `t` ("top"): toggle stay-on-top (keeping TeXpresso above the editor window)
-- `b` ("border"): toggle window borders
-- `F5`: start fullscreen presentation (leave with `ESC`)
+- `B` ("border"): toggle window borders (previously "b")
+- `+` / `-`: Zoom in / out
+- `F5`, `f`, `F11`: Toggle fullscreen presentation
+- `ESC`: Exit full screen
 
 Mouse controls:
 
