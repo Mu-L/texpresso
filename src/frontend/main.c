@@ -1034,6 +1034,7 @@ static void interpret_command(struct persistent_state *ps,
       SDL_SetWindowAlwaysOnTop(ui->window, SDL_FALSE);
       fprintf(stderr, "[command] unmap-window\n");
     }
+    break;
 
     case EDIT_RESCAN:
       schedule_event(SCAN_EVENT);
