@@ -1406,7 +1406,8 @@ bool texpresso_main(struct persistent_state *ps)
         fprintf(stderr, "[synctex forward] sync: hit page %d, coordinates (%d, %d)\n",
                 page, x, y);
 
-        if (page != ui->page)
+        if (page != ui->page &&
+            page >= 0 && page < send(page_count, ui->eng))
         {
           ui->page = page;
           display_page(ps, ui);
