@@ -1,0 +1,20 @@
+\documentclass[12pt]{article}
+
+\begin{document}
+
+\tableofcontents
+
+\section{Introduction}\label{sec:intro}
+
+See Section~\ref{sec:body} on page~\pageref{sec:body} for details.
+
+\section{Body}\label{sec:body}
+
+Refers back to Section~\ref{sec:intro} on page~\pageref{sec:intro}.
+
+\section{Conclusion}\label{sec:end}
+
+Cross-refs to Sections \ref{sec:intro}, \ref{sec:body}, and this one
+(\ref{sec:end}) all require a second pass to resolve.
+
+\end{document}
